@@ -36,6 +36,27 @@ for (let product of products) {
     product.promoPrice = promoPrice.toFixed(2)
 };
 
+// Creating if else if chain for customer type
+let customerType = "standard";
+let customerDiscount = 0; //discount variable
+
+if (customerType === "student") {
+    customerDiscount = 0.10; // 10% Off for students
+} else if (customerType === "senior") {
+    customerDiscount = .05; // 5% Off for seniors
+} else {
+    customerDiscount = 0; // regular customers
+ }
+
+// Creating Customers
+ let customers = [
+    {name: "Bob" , type: "student", cart: [products[0], products[2]]},
+    {name: "Jimmy" , type: "senior", cart: [products[1], products[3]]},
+    {name: "Sandra" , type: "standard", cart: [products[4]]},
+
+ ]
+
+
 
 
 
