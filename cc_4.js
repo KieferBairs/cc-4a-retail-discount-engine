@@ -76,15 +76,15 @@ customerType = customer.type;
   // Apply Customer Discount
 let finalTotal = subtotal * (1-customerDiscount); // Makes final total
   
-  console.log(`Customer ${i + 1}: ${customer.name} (${customer.type})`);
-  console.log(`Total cost: $${finalTotal.toFixed(2)}`);
-  console.log("---");
+  //console.log(`Customer ${i + 1}: ${customer.name} (${customer.type})`);
+  //console.log(`Total cost: $${finalTotal.toFixed(2)}`);
+  //console.log("---");
 };
 
 // Create for in loop 
 let productExample = products[0]
 for (let key in productExample) {
-    console.log(key + ": " + productExample[key]);  
+    //console.log(key + ": " + productExample[key]);  
 };
 
 // Use Object.entries with destrecuting 
@@ -93,11 +93,4 @@ for (let product of products) {
         console.log(key + ": " + value);
     }
     console.log("---");
-}
-
-
-
-
-
-
-
+};
