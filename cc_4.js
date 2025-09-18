@@ -37,7 +37,7 @@ for (let product of products) {
 };
 
 // Creating if else if chain for customer type
-let customerType = "standard";
+let customerType = "regular";
 let customerDiscount = 0; //discount variable
 
 if (customerType === "senior") {
@@ -53,7 +53,7 @@ if (customerType === "senior") {
     {name: "Bob" , type: "student", cart: [products[0]]}, // Laptop 
     {name: "Jimmy" , type: "senior", cart: [products[1]]}, // T-Shirts 
     {name: "Carmine" , type: "senior", cart: [products[3]]}, // Plates
-    {name: "Sandra" , type: "standard", cart: [products[2]]}, // Watch
+    {name: "Sandra" , type: "regular", cart: [products[2]]}, // Watch
  ];
 
 // Simulate Checkout Process
@@ -62,7 +62,7 @@ for (let i = 0; i < customers.length; i++) {
     let subtotal = 0;
 for (let item of customer.cart) {
     subtotal += item.promoPrice * 1; // Use Promo Price
-    item.inventory -=1;   //Reduce Inventory 
+    item.inventory --;   //Reduce Inventory 
 }
 customerType = customer.type;
      if (customerType === "senior") {
@@ -79,7 +79,16 @@ let finalTotal = subtotal * (1-customerDiscount); // Makes final total
   console.log(`Customer ${i + 1}: ${customer.name} (${customer.type})`);
   console.log(`Total cost: $${finalTotal.toFixed(2)}`);
   console.log("---");
-}
+};
+
+// Create for in loop 
+let productExample = products[0]
+for (let key in productExample) {
+    console.log(key + ": " + productExample[key]);  
+};
+
+
+
 
 
 
