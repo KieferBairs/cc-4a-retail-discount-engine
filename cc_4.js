@@ -50,11 +50,35 @@ if (customerType === "student") {
 
 // Creating Customers
  let customers = [
-    {name: "Bob" , type: "student", cart: [products[0], products[2]]},
-    {name: "Jimmy" , type: "senior", cart: [products[1], products[3]]},
-    {name: "Sandra" , type: "standard", cart: [products[4]]},
+    {name: "Bob" , type: "student", cart: [products[0], products[2]]}, // Laptop + Charger
+    {name: "Jimmy" , type: "senior", cart: [products[1], products[3]]}, // T-Shirts + Plates
+    {name: "Sandra" , type: "standard", cart: [products[4]]}, // Shoes
+ ];
 
- ]
+// Simulate Checkout Process
+for (let i = 0; i < customers.length; i++) {
+    let customer = customers[i];
+    let subtotal = 0;
+for (let item of customer.cart) {
+    subtotal += item.promoPrice * 1; // Use Promo Price
+    item.inventory -=1;   //Reduce Inventory 
+}
+    customerType = customer.type;
+    if (customerType === "student") {
+    customerDiscount = 0.05; 
+  } else if (customerType === "senior") {
+    customerDiscount = 0.07; 
+  } else {
+    customerDiscount = 0;
+  }
+
+  // Apply Customer Discount
+let finalTotal = subtotal * (1-customerDiscount);
+  
+  console.log(`Customer ${i + 1}: ${customer.name} (${customer.type})`);
+  console.log(`Total cost: $${finalTotal.toFixed(2)}`);
+  console.log("---");
+}
 
 
 
