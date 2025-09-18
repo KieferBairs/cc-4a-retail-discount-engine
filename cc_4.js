@@ -9,4 +9,34 @@ let products = [
     {name: "Shoes", category: "apparel", price: 80.99, inventory: 12},
 ];
 
-// for of loop
+ // for of loop
+for (let product of products) {
+    let discount = 0;
+       
+ // Create switch    
+    switch (product.category) {
+         case "electronics":
+             discount = .15
+         break;
+            
+        case "apparel":
+            discount = .10
+        break;
+
+        case "home":
+            discount = .05
+        break;
+
+        default: 
+            discount = 0
+        break;
+    }
+
+    let promoPrice = product.price * (1-discount) //(Discounted Price)
+    product.promoPrice = promoPrice.toFixed(2)
+};
+
+
+
+
+
