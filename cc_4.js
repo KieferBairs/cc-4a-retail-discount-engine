@@ -57,6 +57,7 @@ if (customerType === "senior") {
  ];
 
 // Simulate Checkout Process
+console.log("--Customer Discount--")
 for (let i = 0; i < customers.length; i++) {
     let customer = customers[i];
     let subtotal = 0;
@@ -74,7 +75,6 @@ customerType = customer.type;
   }
 
   // Apply Customer Discount
-  console.log("--Customer Discount--")
 let finalTotal = subtotal * (1-customerDiscount); // Makes final total
   console.log(`Customer ${i + 1}: ${customer.name} (${customer.type})`);
   console.log(`Total cost: $${finalTotal.toFixed(2)}`);
